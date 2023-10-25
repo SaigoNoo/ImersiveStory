@@ -1,0 +1,14 @@
+{
+  "nom": "John",
+  "age": 35,
+  "classe": "citoyen",
+  "niveau": 25,
+  "facultés": {
+    "une_main": true,
+    "deux_mains": false,
+    "arc": false,
+    "magie": false,
+    "reparation": true,
+    "soigneur": false
+  }
+}
