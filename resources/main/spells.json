@@ -1,0 +1,84 @@
+{
+  "informations": "Ces datas sont temporaires, il y aura bien entendu plus de sorts",
+  "types": {
+    "fire": "Feu",
+    "water": "Eau",
+    "lightning": "Foudre",
+    "ice": "Glace",
+    "heal": "Soin",
+    "illusion": "Illusion",
+    "shadow": "Ombre",
+    "resistance": "Résistance",
+    "hands": "Pysiques (main nues)"
+  },
+  "weakness": {
+    "fire": [
+      "water"
+    ],
+    "water": [
+      "lightning"
+    ],
+    "lightning": [
+      "resistance"
+    ],
+    "heal": [
+      "shadow"
+    ],
+    "illusion": [
+      "shadow, heal"
+    ],
+    "ice": [
+      "fire",
+      "hands"
+    ],
+    "hands": [
+      "ice"
+    ]
+  },
+  "spells": {
+    "destruction": {
+      "flame": {
+        "name": "Flamme",
+        "dmg": 8,
+        "consumption": 11,
+        "type": "fire",
+        "level": "novice"
+      },
+      "lightning_line": {
+        "name": "Trait de foudre",
+        "dmg": 10,
+        "consumption": 15,
+        "type": "lightning",
+        "level": "novice"
+      },
+      "ice_arrow": {
+        "name": "Flèche de glace",
+        "dmg": 9,
+        "consumption": 13,
+        "type": "ice",
+        "level": "novice"
+      },
+      "flame_blaze": {
+        "name": "Brasier de feu",
+        "dmg": 23,
+        "consumption": 26,
+        "type": "fire",
+        "level": "adept"
+      },
+      "blizzard": {
+        "name": "Blizzard",
+        "dmg": 25,
+        "consumption": 29,
+        "type": "ice",
+        "level": "adept"
+      },
+      "thor_lightning": {
+        "name": "Foudre de Thor",
+        "dmg": 30,
+        "consumption": 32,
+        "type": "lightning",
+        "level": "adept"
+      }
+    }
+  }
+}

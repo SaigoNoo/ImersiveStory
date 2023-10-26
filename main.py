@@ -1,7 +1,5 @@
-from code import UsefullyFunctions
+from code.core import Extensions
 
-UsefullyFunctions().return_value(
-    pack='main',
-    value_type='npc',
-    filename='john'
+Extensions().load_extensions(
+    packs=Extensions().list_packs()
 )

@@ -1,0 +1,11 @@
+{
+  "skills": {
+    "heavyarmor": "Armure lourde",
+    "lightarmor": "Armure légère",
+    "lightweapon": "Arme légère",
+    "heavyweapon": "Arme lourde",
+    "archer": "Arc",
+    "magic": "Magie",
+    "thief": "Voleur"
+  }
+}
