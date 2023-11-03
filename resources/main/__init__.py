@@ -1,1 +1,1 @@
-print(module)
+import resources.main.story.demo.demo

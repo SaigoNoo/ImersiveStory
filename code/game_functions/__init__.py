@@ -1,2 +1,1 @@
-from dialogue import Dialogues
-from npc import NPC
+from code.game_functions.npc import NPC
