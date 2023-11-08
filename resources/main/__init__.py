@@ -1,1 +1,4 @@
-import resources.main.story.demo.demo
+from code import Save
+from resources.main import story
+
+Save()

@@ -1,26 +1,21 @@
 from os import listdir
 from importlib import import_module
+from os.path import exists
 
 
 class Extensions:
-    def pack_exist(self, pack_nr: int):
-        packs = listdir('resources/')
-        if pack_nr > len(packs):
-            return False
-        else:
-            return True
+    @staticmethod
+    def check_init_pack(resource_module: str):
+        if not exists(f"resources/{resource_module}/__init__.py"):
+            raise FileNotFoundError(f'No __init__.py file founded in the "{resource_module}" pack !')
 
-    def list_packs(self):
+    def extensions(self):
         packs = listdir('resources/')
-        if len(packs) > 1:
-            for [index, pack] in enumerate(packs, 1):
-                print(f'{str(index).zfill(2)}) {pack}')
-            while self.pack_exist(int(input('Quel numéro de pack faut-il charger: '))):
-                pass
-        else:
-            return packs
-
-    def load_extensions(self, packs: list):
+        packs.remove('__pycache__') if '__pycache__' in packs else self.nothing()
         for pack in packs:
+            self.check_init_pack(resource_module=pack)
             globals()[pack] = import_module(f'resources.{pack}')
-            globals()['module'] = pack
+        return packs
+
+    def nothing(self):
+        pass

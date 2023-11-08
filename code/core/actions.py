@@ -1,8 +1,8 @@
-from code.core.config_files import read_ini
+from code.core.functions import read_ini
 
 
-class Actions:
-    def __init__(self):
+class Action:
+    def __init__(self, command: str):
         self.commands = [
             "start",
             "stop",
@@ -13,11 +13,8 @@ class Actions:
             "attack",
             "items"
         ]
-        self.command = None
+        self.command = command
+        self.valid_command()
 
-    def valid_command(self, command: str):
-        if len(command) == 0:
-            return False
-        if command[0] == read_ini(key="PREFIX") and command[1::] in self.commands:
-            self.command = command
-            return True
+    def valid_command(self):
+        return self.command[0] == read_ini(key="PREFIX") and self.command[1::] in self.commands
