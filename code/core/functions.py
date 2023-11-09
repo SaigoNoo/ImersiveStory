@@ -21,6 +21,11 @@ class UsefullyMethods:
             elif type(return_value) is str:
                 print(return_value)
 
+            elif type(return_value) is dict:
+                self.table(
+                    table=return_value
+                )
+
         else:
             return return_value
 
@@ -30,24 +35,29 @@ class UsefullyMethods:
         else:
             pass
 
-    @staticmethod
-    def set_switches(switch_n: int, set_value: bool):
-        if switch_n < 0:
-            raise ValueError(f"{switch_n} isn't a valable switch integer")
+    def table(self, table: dict):
+        if self.cli:
+            for [key, value] in table.items():
+                print(f"{key}) {value}")
         else:
-            with open(f'saves/{read_ini("USERNAME")}/switches.txt', 'r') as switches_read:
-                pass
-            with open(f'saves/{read_ini("USERNAME")}/switches.txt', 'w') as switches_write:
-                switch = switches_write[1:-1].split(',')
-                switch[switch_n] = set_value
-                switches_write.write(switch)
-        return switch_n < 0
+            return table
 
     @staticmethod
-    def set_variables(variable_name: str, variable_value):
+    def set_switches(switch_label: str, switch_bool: bool):
+        with open(f'saves/{read_ini("USERNAME")}/switches.json', 'r') as s:
+            switches = load(s)
+            switches[switch_label] = switch_bool
+            s.close()
+        with open(f'saves/{read_ini("USERNAME")}/switches.json', 'w') as s:
+            s.write(dumps(switches))
+
+        return True
+
+    @staticmethod
+    def set_variables(variable_label: str, variable_value):
         with open(f'saves/{read_ini("USERNAME")}/variables.json', 'r') as v:
             variables = load(v)
-            variables[variable_name] = variable_value
+            variables[variable_label] = variable_value
             v.close()
         with open(f'saves/{read_ini("USERNAME")}/variables.json', 'w') as v:
             v.write(dumps(variables))
@@ -55,9 +65,9 @@ class UsefullyMethods:
         return True
 
     @staticmethod
-    def get_variable(variable_name: str):
+    def get_variable(variable_label: str):
         with open(f'saves/{read_ini("USERNAME")}/variables.json', 'r') as variables:
-            return load(variables)[variable_name]
+            return load(variables)[variable_label]
 
     @staticmethod
     def get_switch(switch_n: int):
