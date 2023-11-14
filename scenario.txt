@@ -1,0 +1,57 @@
+::VARIABLES::
+nar=Narrateur
+john=John
+::VARIABLES_FIN::
+
+::TEXTE::
+$nar : Bonjour !
+
+::TEXTE::
+$nar : Merci d'avoir lancé la version démo !
+
+::SAUT::
+
+::TEXTE::
+$nar : Pour commencer, quel est votre nom ?
+
+::ENTREE:: > nom_joueur
+Votre nom :
+
+::SAUT::
+
+::TEXTE::
+$nar : Enchanté de faire ta connaissance $nom_joueur
+
+::TEXTE::
+$nar : Ah oui...
+
+::SAUT::
+
+::TEXTE::
+$nar : Tu es un garcon ou une fille ?
+
+::CHOIX::
+A = Garcon
+B = File
+::CHOIX_FIN::
+
+::ENTREE:: > sexe_joueur
+Sexe:
+
+::SAUT::
+
+::SI:: $sexe_joueur EST A
+    ::TEXTE::
+    $nar : Un garçon donc !
+
+    ::TEXTE::
+    $nar : Tiens une voiture
+
+::SINON_SI:: $sexe_joueur EST B
+    ::TEXTE::
+    $nar : Oh, tu est donc une fille !
+
+    ::TEXTE::
+    $nar : Tiens, une poupée !
+
+::SI_FIN::
