@@ -6,3 +6,6 @@ class Variables(File):
         variables = self.read()
         variables[key] = value
         self.write(content=variables)
+
+    def get(self, key: str) -> any:
+        return self.read()[key]

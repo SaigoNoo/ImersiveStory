@@ -4,7 +4,7 @@ from json import load, dumps
 class File:
     def __init__(self, file: str | bytes):
         self.file = file
-        self.lang = None
+        self.scenario = None
 
     def read(self) -> dict or list:
         new_dict = {}

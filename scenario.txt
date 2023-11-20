@@ -3,4 +3,7 @@ nar = Narrateur
 :: E_VARIABLE ::
 
 :: TEXTE ::
-$nar: Bonjour et bienvenue dans le mode démo !
+$nar: Bonjour et bienvenue dans le mode démo!
+
+:: TEXTE ::
+$nar: Je suis $nar, et je vais vous guider dans cette démo !

@@ -1,4 +1,4 @@
-from code import Variables, System, Scenario
+from code import Scenario
 
 if __name__ == '__main__':
     scenario = Scenario(file='scenario.txt')
