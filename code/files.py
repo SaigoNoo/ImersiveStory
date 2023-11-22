@@ -13,7 +13,7 @@ class File:
                 return load(file)
             elif self.file == 'config.ini':
                 for line in file.read().splitlines():
-                    new_dict[line.split('=')[0]] = line.split('=')[1]
+                    new_dict[line.split('=')[0].strip()] = line.split('=')[1].strip()
                 return new_dict
             else:
                 return file.read().splitlines()

@@ -1,9 +1,17 @@
 :: VARIABLE ::
-nar = Narrateur
+nar = Marwa
 :: E_VARIABLE ::
 
 :: TEXTE ::
-$nar: Bonjour et bienvenue dans le mode démo!
+|nar|: Bonjour et bienvenue dans le mode démo!
 
 :: TEXTE ::
-$nar: Je suis $nar, et je vais vous guider dans cette démo !
+|nar|: Je suis |nar|, et je vais vous guider dans cette démo !
+
+:: SAUT ::
+
+:: TEXTE ::
+|nar|: Pour commencer... Quel est votre nom ?
+
+:: ENTREE :: > nom_joueur
+Votre nom:
