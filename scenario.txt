@@ -1,5 +1,5 @@
 :: VARIABLE ::
-nar = Marwa
+nar = Narrateur
 :: E_VARIABLE ::
 
 :: TEXTE ::
@@ -8,10 +8,11 @@ nar = Marwa
 :: TEXTE ::
 |nar|: Je suis |nar|, et je vais vous guider dans cette démo !
 
-:: SAUT ::
-
 :: TEXTE ::
 |nar|: Pour commencer... Quel est votre nom ?
 
 :: ENTREE :: > nom_joueur
 Votre nom:
+
+:: TEXTE ::
+|nar|: Enchanté |nom_joueur| !

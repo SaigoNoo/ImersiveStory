@@ -1,3 +1,4 @@
+from os import system
 from code import Variables, File
 from rich import print
 
@@ -13,6 +14,8 @@ class Scenario:
         self.scenario = None
 
     def play_scenario(self) -> any:
+        self.clear()
+        start = True
         self.scenario = Variables(file=self.file).read()
         for [index, line] in enumerate(self.scenario):
             if not self.ignore(line=line) and self.is_instruction(line=line):
@@ -30,10 +33,30 @@ class Scenario:
                     print("")
                 # Si ENTREE TEXTE
                 elif self.instruction(line=line) == "ENTREE":
-                    pass
+                    self.input_player(
+                        index_start=index
+                    )
+            if self.ignore(line=line) or start:
+                if start:
+                    start = False
+                input()
+                self.clear()
 
-    def input_player(self, index_start: int, line: str) -> None:
-        input(self.scenario[index_start + 1])
+    @staticmethod
+    def enter_to_continue():
+        pass
+
+    def input_player(self, index_start: int) -> None:
+        variable = Variables(file="variables.json")
+        line = self.scenario[index_start + 1]
+        if line[-1] == ":":
+            line += " "
+        inp = input(line)
+        var_name = self.scenario[index_start].split("::")[2].split(">")[1].strip()
+        variable.save(
+            key=var_name,
+            value=inp
+        )
 
     def do_list_parameters(self, index_start: int, instruction_type: str) -> None:
         index = index_start
@@ -89,3 +112,7 @@ class Scenario:
                 replace[1] = f"[bold {var_color}]{word}[/bold {var_color}]"
                 temp_line[index] = ''.join(replace)
         return ' '.join(temp_line)
+
+    @staticmethod
+    def clear():
+        return system("clear")
