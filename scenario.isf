@@ -1,0 +1,41 @@
+:: VARIABLE ::
+nar = Narrateur
+:: E_VARIABLE ::
+
+:: TEXTE ::
+|nar|: Bonjour et bienvenue dans le mode démo!
+
+:: TEXTE ::
+|nar|: Je suis |nar|, et je vais vous guider dans cette démo !
+
+:: TEXTE ::
+|nar|: Pour commencer... Quel est votre nom ?
+
+:: ENTREE :: > nom_joueur
+Votre nom:
+
+:: TEXTE ::
+|nar|: Enchanté |nom_joueur| !
+
+:: CHOIX :: > sexe_joueur
+Homme
+Femme
+:: E_CHOIX :: Vous êtes un homme ou une femme ?
+
+:: SI :: |sexe_joueur| EST Homme
+    :: TEXTE ::
+    |nar|: Tu es donc un homme |nom_joueur| !
+
+:: SINON_SI :: |sexe_joueur| EST Femme
+    :: TEXTE ::
+    |nar|: Tu es donc une femme |nom_joueur| !
+
+    :: TEXTE ::
+    |nar|: Une fille quoi...
+
+:: E_SI ::
+
+:: TEXTE ::
+|nar|: Ready ? C'est parti |nom_joueur| !
+
+
