@@ -1,5 +1,5 @@
-from code import Scenario
+from code.main import Main
 
 if __name__ == '__main__':
-    scenario = Scenario(file='scenario.txt')
+    scenario = Main(file='scenario.isf')
     scenario.play_scenario()
