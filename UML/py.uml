@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#E:/DevDevFolder/EPHEC/DEV2/ImersiveStory/code/main.py</OriginalElement>
+  <nodes>
+    <node x="1151.8949161403364" y="-120.22984870154005">code.main.Main</node>
+    <node x="485.6566348903366" y="309.5896885326668">code.variables.Variables</node>
+    <node x="816.0381859106838" y="261.58968853266674">code.files.File</node>
+    <node x="1120.8949161403364" y="1313.4646885326667">code.game.conditions.Si</node>
+    <node x="808.0381859106838" y="741.5896885326667">code.game.texte.Texte</node>
+    <node x="1507.282896369989" y="514.0896885326667">code.game.variables.GameVariables</node>
+    <node x="1507.282896369989" y="741.5896885326667">code.game.inputs.PlayerInput</node>
+    <node x="1095.3949161403364" y="261.58968853266674">object</node>
+    <node x="1507.282896369989" y="261.58968853266674">code.game.choices.Choices</node>
+    <node x="1064.3949161403364" y="955.4092257668735">code.game.instructions.Instruction</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="code.game.choices.Choices" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.game.inputs.PlayerInput" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.game.texte.Texte" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.variables.Variables" target="code.files.File" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.game.instructions.Instruction" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.files.File" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.main.Main" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.game.conditions.Si" target="code.game.instructions.Instruction" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="code.game.variables.GameVariables" target="object" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Circular" zoom="0.4096" showDependencies="false" x="1595.6953125" y="733.96484375" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+</Diagram>
+
