@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from os.path import exists
 from atexit import register
 from code.files import File
@@ -29,3 +30,10 @@ if __name__ == '__main__':
     register(reset_temp_datas)
     Scenarios().checks_id()
     load_menu()
+=======
+from code.main import Main
+
+if __name__ == '__main__':
+    scenario = Main(file='scenario.isf')
+    scenario.play_scenario()
+>>>>>>> main
