@@ -1,10 +1,7 @@
 from code.game.texte import Texte
 from os import system
 from platform import system as os
-<<<<<<< HEAD
 from getpass import getpass
-=======
->>>>>>> main
 
 
 class Instruction:
@@ -68,25 +65,16 @@ class Instruction:
         return table
 
     def run_range_lines(self, start_line: int, end_line: int) -> bool:
-<<<<<<< HEAD
         need_enter = False
-=======
-        """
-        """
->>>>>>> main
         for line in range(start_line + 1, end_line):
             if not self.ignore(line=self.scenario[line]) and self.is_instruction(line=self.scenario[line]):
                 if self.instruction(line=self.scenario[line]) == "TEXTE":
                     Texte(scenario=self.scenario).texte(index_start=line)
-<<<<<<< HEAD
                     need_enter = True
                 if need_enter:
                     getpass("\nAppuyez sur Enter pour continuer...")
                 self.clear()
         return True
-=======
-                    return True
->>>>>>> main
 
     @staticmethod
     def clear():

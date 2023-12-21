@@ -1,13 +1,14 @@
 {
+  "last_save": 2,
+  "player": {
+    "xp": 1,
+    "time": 28,
+    "money": 500
+  },
   "nar": "Narrateur",
-<<<<<<< HEAD
-  "nom_joueur": "Sai",
-  "sexe_joueur": "Homme",
   "sys": "Syst\u00e8me",
+  "nom_joueur": "Sai",
+  "sexe_joueur": "Femme",
   "npc_002": "Capitaine Moors",
-  "00002_choix01": "J'ai vraiment aim\u00e9"
-=======
-  "nom_joueur": "Sao",
-  "sexe_joueur": "Homme"
->>>>>>> main
+  "00002_choix01": "C'\u00e9tait nul, horrible"
 }

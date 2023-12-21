@@ -7,12 +7,9 @@ from code.game.conditions import Si
 from code.game.variables import GameVariables
 from code.game.inputs import PlayerInput
 from code.game.choices import Choices
-<<<<<<< HEAD
 from code.game.saves import Sauvegardes
 from code.game.free_control import FreeControl
 from code.game.player import Player
-=======
->>>>>>> main
 
 
 class Main:
@@ -44,17 +41,12 @@ class Main:
         self.si = Si(scenario=self.scenario)
         self.player_input = PlayerInput(scenario=self.scenario)
 
-<<<<<<< HEAD
     def play_scenario(self, no_save=False) -> any:
-=======
-    def play_scenario(self) -> any:
->>>>>>> main
         """
         En de termes simples:
         1. On mémorise une liste qui contient les instructions et données
         2. On boucle dans la liste ligne par ligne
         3. Si on lit une instruction, on fait appel à l'objet responsable de l'action
-
         __info__:
         - skip: boolean qui permettra lors d'un SI de sauter les lignes dont la condition est fausse
         - line_to_reach: liste qui contiendra (POUR UN SI) les index des blocs a lire d'une condition vrai
@@ -111,7 +103,6 @@ class Main:
                 elif self.instruction.instruction(line=line) == "SI" and not skip:
                     si = self.si.si(index_start=index, scenario=self.scenario)
                     line_to_reach = si[2]
-<<<<<<< HEAD
                     self.instruction.run_range_lines(start_line=si[0], end_line=si[1])
                     need_enter = False
                     skip = True
@@ -124,14 +115,6 @@ class Main:
                 elif self.instruction.instruction(line=line) == "JOUEUR_CONTROLE" and not skip:
                     FreeControl().run_mode()
 
-=======
-                    need_enter = self.instruction.run_range_lines(start_line=si[0], end_line=si[1])
-                    skip = True
-
-                # Si JOUEUR_CONTROLE
-                elif self.instruction.instruction(line=line) == "JOUEUR_CONTROLE" and not skip:
-                    pass
->>>>>>> main
 
                 # Skip to line
                 elif skip:
@@ -144,8 +127,5 @@ class Main:
             if need_enter:
                 getpass("\nAppuyez sur Enter pour continuer...")
             self.instruction.clear()
-<<<<<<< HEAD
         if not no_save:
             Sauvegardes(file="save.json").sauvegarder()
-=======
->>>>>>> main

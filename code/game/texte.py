@@ -1,14 +1,11 @@
 from rich.console import Console
 from rich.panel import Panel
 from code.game.variables import GameVariables
-<<<<<<< HEAD
 from rich.table import Table
 from datetime import timedelta
 from code.game.player import Player
 from time import time
 from code.files import File
-=======
->>>>>>> main
 
 # Objects Init #
 gv = GameVariables()
@@ -18,11 +15,7 @@ gv = GameVariables()
 
 
 class Texte:
-<<<<<<< HEAD
     def __init__(self, scenario=None):
-=======
-    def __init__(self, scenario: dict):
->>>>>>> main
         self.scenario = scenario
 
     def texte(self, index_start: int) -> None:
@@ -30,7 +23,6 @@ class Texte:
         print juste un texte avec une peu de syntaxe rich
         """
         output = gv.set_variables(line=self.scenario[index_start + 1], color=True)
-<<<<<<< HEAD
         if ":" in output:
             npc = output.split(':')[0].strip()
             text = ":".join(output.split(":")[1::]).strip()
@@ -62,9 +54,3 @@ class Texte:
 
         console = Console()
         console.print(table)
-=======
-        npc = output.split(':')[0]
-        text = ":".join(output.split(":")[1::])
-        panel_1 = Panel.fit(f"{text.strip()}", title=f"{npc.strip()}", width=60)
-        Console(record=True).print(panel_1)
->>>>>>> main

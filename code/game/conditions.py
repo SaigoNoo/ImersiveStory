@@ -49,16 +49,9 @@ class Si(Instruction):
         """
         Opération logique en utilisant la comparaison de string
         """
-<<<<<<< HEAD
         if "+EST+" in conditions:
             index = conditions.index("+EST+")
             return " ".join(conditions[0:index]) == " ".join(conditions[(index + 1):])
         elif "-EST-" in conditions:
             index = conditions.index("-EST-")
             return " ".join(conditions[0:index]) != " ".join(conditions[(index + 1):])
-=======
-        if conditions[1].strip() == "EST":
-            return conditions[0] == conditions[2]
-        elif conditions[1].strip() == "EST_PAS":
-            return conditions[0] != conditions[2]
->>>>>>> main
