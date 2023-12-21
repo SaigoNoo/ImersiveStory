@@ -1,0 +1,49 @@
+:: VARIABLE ::
+npc_002 = Capitaine Moors
+:: E_VARIABLE ::
+
+:: SI :: |sexe_joueur| +EST+ Homme
+    :: TEXTE ::
+    |npc_002|: Alors, qu'en as-tu pensé mon ami !
+
+:: SINON_SI :: |sexe_joueur| +EST+ Femme
+    :: TEXTE ::
+    |npc_002|: Alors, qu'en as-tu pensé mon amie !
+
+:: E_SI ::
+
+:: CHOIX :: > 00002_choix01
+J'ai vraiment aimé
+Bof
+C'était nul, horrible
+:: E_CHOIX :: Alors, qu'en as-tu pensé ?
+
+:: SI :: |00002_choix01| +EST+ J'ai vraiment aimé
+    :: TEXTE ::
+    |npc_002|: T'as bon gout ! Merci de ton avis...
+
+:: SINON_SI :: |00002_choix01| +EST+ Bof
+    :: TEXTE ::
+    |npc_002|: Aille, je suis désolé pour toi...
+
+:: SINON_SI :: |00002_choix01| +EST+ C'était nul, horrible
+
+    :: TEXTE ::
+    |npc_002|: Ce n'est pas grave, le prix reste le même !
+
+:: E_SI ::
+
+:: TEXTE ::
+|npc_002|: Bref, merci d'avoir répondu à ma question .
+
+:: TEXTE ::
+|npc_002|: Pour te remercier, je t'offre 500$ !
+
+:: TEXTE ::
+|npc_002|: Ne les gasplilles pas inutilement !
+
+:: ARGENT ::
+500
+
+:: TEXTE ::
+|npc_002|: Allez, c'est parti, tu peux commencer à t'amuser.

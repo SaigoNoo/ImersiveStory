@@ -1,0 +1,80 @@
+@startuml
+
+class Variables {
+  - file: str
+  + save(key: str, value: any): void
+  + get(key: str): any
+}
+
+class Choices {
+  - current_index: int
+  + display_options(options: list, texte: str, stdscr: any): void
+  + decrement_index(options: list): void
+  + increment_index(options: list): void
+  + run(stdscr: any, options: list, texte: str, variable_key: str): void
+}
+
+class Si {
+  + si(index_start: int, scenario: dict): list or None
+  - operateur(conditions: list): bool
+}
+
+class PlayerInput {
+  + __init__(scenario: dict): void
+  + input_player(index_start: int): None
+}
+
+class Instruction {
+  + __init__(scenario: dict): void
+  + instruction(line: str): str
+  + is_instruction(line: str): bool
+  + ignore(line: str): bool
+  + do_list_parameters(index_start: int, instruction_type: str): list
+  + run_range_lines(start_line: int, end_line: int): bool
+  + clear(): void
+}
+
+class Texte {
+  + __init__(scenario: dict): void
+  + texte(index_start: int): void
+}
+
+class GameVariables {
+  + saves_variables(list_var: list): void
+  + set_variables(line: str, color: bool): str
+}
+
+class File {
+  + __init__(file: str | bytes): void
+  + read(): dict or list
+  + key(line: str): str
+  + val_key(line: str): str
+  + write(content: dict): void
+}
+
+class Main {
+  - file: str | bytes
+  - scenario: None
+  - si_result: None
+  - instruction: None
+  - si: None
+  - player_input: None
+  - txt: None
+  + initialize_objects(): void
+  + play_scenario(): any
+}
+
+Variables --* File: Dependency (0..*)
+Choices --o Variables: Association (0..1)
+Si --o Instruction: Inheritance (1)
+PlayerInput --o Variables: Association (0..1)
+Texte --o GameVariables: Association (0..1)
+GameVariables --* File: Dependency (0..*)
+Main --o Texte: Association (0..1)
+Main --o Instruction: Association (0..1)
+Main --o Si: Association (0..1)
+Main --o PlayerInput: Association (0..1)
+Main --o Choices: Association (0..1)
+Main --* Variables: Dependency (0..*)
+
+@enduml
